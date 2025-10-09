@@ -4,7 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Moritz Ebach</title>
-  <link href="https://fonts.googleapis.com/css2?family=Norwester&display=swap" rel="stylesheet">
+  <!-- Libre Baskerville importieren -->
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
   <style>
     :root { --bg: #f5efe6; --fg: #1a1a1a; }
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -12,37 +13,39 @@
     body {
       background: var(--bg);
       color: var(--fg);
-      font-family: 'Norwester', -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      line-height: 1.5;
+      font-family: 'Libre Baskerville', serif;
+      line-height: 1.6;
     }
 
     .wrap { position: relative; min-height: 100vh; }
 
-    /* Name 3 cm über den restlichen oberen Text (~115 px) */
+    /* Name bleibt ca. 3 cm über den anderen oberen Texten */
     .name {
       position: fixed;
       top: calc(30% - 115px);
       right: 95px;
       font-size: 1.6rem;
-      font-weight: 600;
+      font-weight: 700;
       text-align: right;
     }
 
-    /* Restlicher oberer Block */
+    /* Oberer Block */
     .top-block {
       position: fixed;
       top: 30%;
       right: 95px;
       text-align: right;
+      font-size: 1rem;
     }
 
-    /* Unterer Block 3 cm weiter nach unten (~115 px) */
+    /* Unterer Block – 1.5 cm (≈ 57 px) weiter nach unten verschoben */
     .bottom-block {
       position: fixed;
-      bottom: calc(25% - 115px);
+      bottom: calc(25% - 172px); /* vorher -115px, jetzt -115 - 57 */
       right: 95px;
       text-align: right;
-      line-height: 1.6;
+      line-height: 1.7;
+      font-size: 1rem;
     }
 
     a {
@@ -56,7 +59,7 @@
       .name, .top-block, .bottom-block { right: 16px; left: 16px; text-align: right; }
       .name { top: calc(25% - 80px); font-size: 1.4rem; }
       .top-block { top: 25%; }
-      .bottom-block { bottom: calc(20% - 80px); }
+      .bottom-block { bottom: calc(20% - 100px); }
     }
   </style>
 </head>
