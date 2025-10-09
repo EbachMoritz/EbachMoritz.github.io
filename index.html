@@ -4,9 +4,39 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Moritz Ebach</title>
+
+  <!-- SEO / Meta -->
+  <meta name="description" content="Moritz Ebach – M.Sc. Finance (UK), Co-Founder at financialreports.eu">
+  <meta name="author" content="Moritz Ebach">
+  <!-- Optional: ersetze DEINUSERNAME durch deinen GitHub-Namen -->
+  <link rel="canonical" href="https://DEINUSERNAME.github.io/">
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Moritz Ebach">
+  <meta property="og:description" content="M.Sc. Finance (UK) · Co-Founder at financialreports.eu">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://DEINUSERNAME.github.io/">
+  <meta property="og:image" content="https://DEINUSERNAME.github.io/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Performance: Fonts schneller laden -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Favicon (optional, lege /favicon.png ins Repo) -->
+  <link rel="icon" href="/favicon.png">
+
+  <!-- Basis-CSP (passt für GitHub Pages & diese Seite) -->
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; img-src 'self' data: https:; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src https://fonts.gstatic.com; script-src 'self'">
+
   <style>
     :root { --bg: #f5efe6; --fg: #1a1a1a; }
+    @media (prefers-color-scheme: dark){
+      :root { --bg:#1a1a1a; --fg:#f5efe6; }
+    }
+
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html, body { height: 100%; }
     body {
@@ -19,29 +49,27 @@
 
     .wrap { position: relative; min-height: 100vh; }
 
-    /* Mittelblock: Name + Titel + Co-Founder */
+    /* Mittelblock: Name (2 cm über) + M.Sc. + Co-Founder */
     .middle-block {
       position: fixed;
       bottom: 30%;
-      right: 95px;
+      right: 95px;            /* ~2,5 cm Rand auf Desktop */
       text-align: right;
       font-size: 1rem;
       line-height: 1.7;
     }
+    .name { margin-bottom: 75px; } /* ~2 cm über M.Sc. */
 
-    .name {
-      margin-bottom: 75px; /* ca. 2 cm Abstand über M.Sc. */
-    }
-
-    /* Unterer Block: LinkedIn und Contact nebeneinander */
+    /* Unterer Block: LinkedIn & Contact nebeneinander */
     .bottom-block {
       position: fixed;
-      bottom: calc(15% - 57px);
+      bottom: calc(15% - 57px); /* wie gewünscht tiefer gesetzt */
       right: 95px;
       display: flex;
-      gap: 30px; /* Abstand zwischen LinkedIn und Contact */
+      gap: 30px;
       justify-content: flex-end;
       font-size: 1rem;
+      line-height: 1.7;
     }
 
     a {
@@ -49,37 +77,36 @@
       text-decoration: none;
       border-bottom: 1px solid currentColor;
     }
-    a:hover { opacity: 0.7; }
+    a:hover { text-decoration: underline; }
+    a:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
 
     @media (max-width: 480px) {
-      .middle-block, .bottom-block {
-        right: 16px;
-        left: 16px;
-        text-align: right;
-      }
-      .bottom-block {
-        justify-content: flex-end;
-        gap: 20px;
-        bottom: 10%;
-      }
+      .middle-block, .bottom-block { right: 16px; left: 16px; text-align: right; }
+      .bottom-block { justify-content: flex-end; gap: 20px; bottom: 10%; }
     }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <div class="middle-block">
+  <header aria-hidden="true"></header>
+
+  <main class="wrap">
+    <section class="middle-block" aria-label="Profile">
       <div class="name">Moritz Ebach</div>
       <div>M.Sc. Finance (UK)</div>
       <div>
         Co-Founder
         <a href="https://www.financialreports.eu" target="_blank" rel="noopener">www.financialreports.eu</a>
       </div>
-    </div>
+    </section>
 
-    <div class="bottom-block">
-      <a href="https://www.linkedin.com/in/moritzebach/" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="mailto:moritz@financialreports.eu">Contact</a>
-    </div>
-  </div>
+    <footer class="bottom-block" aria-label="Links">
+      <a href="https://www.linkedin.com/in/moritzebach/" target="_blank" rel="noopener" aria-label="LinkedIn Profil">LinkedIn</a>
+      <a href="mailto:moritz@financialreports.eu" aria-label="Contact per E-Mail">Contact</a>
+      <!-- Alternative mit leichtem Spam-Schutz (erfordert CSP-Anpassung auf 'unsafe-inline' für script-src):
+      <a href="#" aria-label="Contact per E-Mail"
+         onclick="window.location='mailto:'+'moritz'+'@'+'financialreports.eu'">Contact</a>
+      -->
+    </footer>
+  </main>
 </body>
 </html>
