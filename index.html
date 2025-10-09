@@ -19,17 +19,7 @@
 
     .wrap { position: relative; min-height: 100vh; }
 
-    /* Name oben, gleiche Stilistik wie Rest */
-    .name {
-      position: fixed;
-      top: 24px;
-      right: 95px;
-      font-size: 1rem;
-      text-align: right;
-      font-weight: 400;
-    }
-
-    /* Mittel-/Unterer Block: M.Sc. + Co-Founder */
+    /* Block für Name + M.Sc. + Co-Founder */
     .middle-block {
       position: fixed;
       bottom: 30%;
@@ -38,6 +28,11 @@
       font-size: 1rem;
       line-height: 1.7;
       font-weight: 400;
+    }
+
+    /* Name steht 2cm (~75px) über M.Sc. Finance */
+    .name {
+      margin-bottom: 75px;
     }
 
     /* Kontaktblock unten */
@@ -59,12 +54,11 @@
     a:hover { opacity: 0.7; }
 
     @media (max-width: 480px) {
-      .name, .middle-block, .bottom-block {
+      .middle-block, .bottom-block {
         right: 16px;
         left: 16px;
         text-align: right;
       }
-      .name { top: 16px; }
       .middle-block { bottom: 28%; }
       .bottom-block { bottom: 10%; }
     }
@@ -72,9 +66,8 @@
 </head>
 <body>
   <div class="wrap">
-    <div class="name">Moritz Ebach</div>
-
     <div class="middle-block">
+      <div class="name">Moritz Ebach</div>
       <div>M.Sc. Finance (UK)</div>
       <div>
         Co-Founder
