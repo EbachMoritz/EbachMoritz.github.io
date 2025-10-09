@@ -7,45 +7,60 @@
   <style>
     :root { --bg: #f5efe6; --fg: #1a1a1a; }
     * { box-sizing: border-box; }
-    html, body { height: 100%; }
+    html, body { height: 100%; margin: 0; padding: 0; }
     body {
-      margin: 0;
       background: var(--bg);
       color: var(--fg);
       font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       line-height: 1.5;
     }
 
-    .wrap { position: relative; min-height: 100vh; padding: 24px; }
+    /* Struktur */
+    .wrap { position: relative; min-height: 100vh; }
 
-    /* etwas weiter nach links eingerückt – ca. 2.5cm Rand (~95px) */
-    .name     { position: fixed; top: 24px; right: 95px; font-weight: 500; text-align: right; }
+    /* etwa zwischen oberem Bereich und Mitte */
+    .top-block {
+      position: fixed;
+      top: 30%;
+      right: 95px;
+      text-align: right;
+    }
 
-    /* höher platziert, leicht über Mitte */
-    .center   { position: fixed; top: 40%; right: 95px; text-align: right; max-width: 90vw; }
+    /* zwischen Mitte und unten */
+    .bottom-block {
+      position: fixed;
+      bottom: 25%;
+      right: 95px;
+      text-align: right;
+      line-height: 1.6;
+    }
 
-    .contact  { position: fixed; bottom: 24px; right: 95px; text-align: right; line-height: 1.6; }
-
-    a { color: inherit; text-decoration: none; border-bottom: 1px solid currentColor; }
+    a {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px solid currentColor;
+    }
     a:hover { opacity: 0.7; }
 
     @media (max-width: 480px) {
-      .name, .center, .contact { right: 16px; left: 16px; }
+      .top-block, .bottom-block { right: 16px; left: 16px; }
     }
   </style>
 </head>
 <body>
   <div class="wrap">
-    <div class="name">Moritz Ebach</div>
-
-    <div class="center">
-      M.Sc. Finance (UK)<br>
-      Co-Founder <a href="https://www.financialreports.eu" target="_blank" rel="noopener">www.financialreports.eu</a>
+    <div class="top-block">
+      <div class="name">Moritz Ebach</div>
+      <div>M.Sc. Finance (UK)</div>
+      <div>
+        Co-Founder
+        <a href="https://www.financialreports.eu" target="_blank" rel="noopener">www.financialreports.eu</a>
+      </div>
     </div>
 
-    <div class="contact">
-      <a href="https://www.linkedin.com/in/moritzebach/" target="_blank" rel="noopener">LinkedIn</a><br>
-      <a href="mailto:moritz@financialreports.eu">moritz@financialreports.eu</a>
+    <div class="bottom-block">
+      <div><a href="https://www.linkedin.com/in/moritzebach/" target="_blank" rel="noopener">LinkedIn</a></div>
+      <div><a href="mailto:moritz@financialreports.eu">Contact</a></div>
     </div>
   </div>
 </body>
