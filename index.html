@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Moritz Ebach</title>
+  <style>
+    :root { --bg: #f5efe6; --fg: #1a1a1a; }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.4;
+    }
+    /* Positionierung */
+    .wrap { position: relative; min-height: 100vh; padding: 24px; }
+    .name     { position: fixed; top: 24px;   right: 24px; font-weight: 500; text-align: right; }
+    .center   { position: fixed; top: 50%;    right: 24px; transform: translateY(-50%); text-align: right; max-width: 90vw; }
+    .contact  { position: fixed; bottom: 24px; right: 24px; text-align: right; }
+    a { color: inherit; text-decoration: none; border-bottom: 1px solid currentColor; }
+    a:hover { opacity: 0.7; }
+    @media (max-width: 480px) {
+      .name, .center, .contact { right: 16px; left: 16px; } /* sorgt für angenehme Ränder auf dem Handy */
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="name">Moritz Ebach</div>
+
+    <div class="center">
+      Co-Founder <a href="https://www.financialreports.eu" target="_blank" rel="noopener">www.financialreports.eu</a>
+    </div>
+
+    <div class="contact">
+      <!-- Ersetze die Mailadresse oder lasse "Contact" als reinen Text -->
+      <a href="mailto:hello@deinedomain.tld">Contact</a>
+      <!-- Wenn du nur Text willst: <span>Contact</span> statt des <a>-Tags -->
+    </div>
+  </div>
+</body>
+</html>
