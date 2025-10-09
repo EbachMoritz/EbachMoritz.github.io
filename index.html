@@ -4,21 +4,31 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Moritz Ebach</title>
+  <link href="https://fonts.googleapis.com/css2?family=Norwester&display=swap" rel="stylesheet">
   <style>
     :root { --bg: #f5efe6; --fg: #1a1a1a; }
-    * { box-sizing: border-box; }
-    html, body { height: 100%; margin: 0; padding: 0; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; }
     body {
       background: var(--bg);
       color: var(--fg);
-      font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-family: 'Norwester', -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       line-height: 1.5;
     }
 
-    /* Struktur */
     .wrap { position: relative; min-height: 100vh; }
 
-    /* etwa zwischen oberem Bereich und Mitte */
+    /* Name 3 cm über den restlichen oberen Text (~115 px) */
+    .name {
+      position: fixed;
+      top: calc(30% - 115px);
+      right: 95px;
+      font-size: 1.6rem;
+      font-weight: 600;
+      text-align: right;
+    }
+
+    /* Restlicher oberer Block */
     .top-block {
       position: fixed;
       top: 30%;
@@ -26,10 +36,10 @@
       text-align: right;
     }
 
-    /* zwischen Mitte und unten */
+    /* Unterer Block 3 cm weiter nach unten (~115 px) */
     .bottom-block {
       position: fixed;
-      bottom: 25%;
+      bottom: calc(25% - 115px);
       right: 95px;
       text-align: right;
       line-height: 1.6;
@@ -43,14 +53,18 @@
     a:hover { opacity: 0.7; }
 
     @media (max-width: 480px) {
-      .top-block, .bottom-block { right: 16px; left: 16px; }
+      .name, .top-block, .bottom-block { right: 16px; left: 16px; text-align: right; }
+      .name { top: calc(25% - 80px); font-size: 1.4rem; }
+      .top-block { top: 25%; }
+      .bottom-block { bottom: calc(20% - 80px); }
     }
   </style>
 </head>
 <body>
   <div class="wrap">
+    <div class="name">Moritz Ebach</div>
+
     <div class="top-block">
-      <div class="name">Moritz Ebach</div>
       <div>M.Sc. Finance (UK)</div>
       <div>
         Co-Founder
