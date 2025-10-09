@@ -4,7 +4,6 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Moritz Ebach</title>
-  <!-- Libre Baskerville importieren -->
   <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
   <style>
     :root { --bg: #f5efe6; --fg: #1a1a1a; }
@@ -15,37 +14,41 @@
       color: var(--fg);
       font-family: 'Libre Baskerville', serif;
       line-height: 1.6;
+      font-weight: 400;
     }
 
     .wrap { position: relative; min-height: 100vh; }
 
-    /* Name bleibt ca. 3 cm über den anderen oberen Texten */
+    /* Name oben, gleiche Stilistik wie Rest */
     .name {
       position: fixed;
-      top: calc(30% - 115px);
+      top: 24px;
       right: 95px;
-      font-size: 1.6rem;
-      font-weight: 700;
+      font-size: 1rem;
       text-align: right;
+      font-weight: 400;
     }
 
-    /* Oberer Block */
-    .top-block {
+    /* Mittel-/Unterer Block: M.Sc. + Co-Founder */
+    .middle-block {
       position: fixed;
-      top: 30%;
+      bottom: 30%;
       right: 95px;
       text-align: right;
       font-size: 1rem;
+      line-height: 1.7;
+      font-weight: 400;
     }
 
-    /* Unterer Block – 1.5 cm (≈ 57 px) weiter nach unten verschoben */
+    /* Kontaktblock unten */
     .bottom-block {
       position: fixed;
-      bottom: calc(25% - 172px); /* vorher -115px, jetzt -115 - 57 */
+      bottom: calc(15% - 57px);
       right: 95px;
       text-align: right;
-      line-height: 1.7;
       font-size: 1rem;
+      line-height: 1.7;
+      font-weight: 400;
     }
 
     a {
@@ -56,10 +59,14 @@
     a:hover { opacity: 0.7; }
 
     @media (max-width: 480px) {
-      .name, .top-block, .bottom-block { right: 16px; left: 16px; text-align: right; }
-      .name { top: calc(25% - 80px); font-size: 1.4rem; }
-      .top-block { top: 25%; }
-      .bottom-block { bottom: calc(20% - 100px); }
+      .name, .middle-block, .bottom-block {
+        right: 16px;
+        left: 16px;
+        text-align: right;
+      }
+      .name { top: 16px; }
+      .middle-block { bottom: 28%; }
+      .bottom-block { bottom: 10%; }
     }
   </style>
 </head>
@@ -67,7 +74,7 @@
   <div class="wrap">
     <div class="name">Moritz Ebach</div>
 
-    <div class="top-block">
+    <div class="middle-block">
       <div>M.Sc. Finance (UK)</div>
       <div>
         Co-Founder
